@@ -1,4 +1,4 @@
-# MongoDB CRUD API with Node.js and Express
+![Screenshot 2025-02-10 063459](https://github.com/user-attachments/assets/3df4d1c1-2fb9-45ae-b949-f5cbdff3d039)# MongoDB CRUD API with Node.js and Express
 
 This project demonstrates a MongoDB-based REST API using Node.js and Express.js. The API allows users to Create, Read, Update, and Delete (CRUD) book records in a MongoDB database.
 
@@ -77,6 +77,7 @@ cd mongodb_project
 ```
 npm init -y
 ```
+![Screenshot 2025-02-10 063459](https://github.com/user-attachments/assets/3bf3b020-fc4c-4b69-9e62-50b784f52fc7)
 
 ### 3. Install Dependencies
 ```
