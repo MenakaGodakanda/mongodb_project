@@ -60,6 +60,7 @@ npm start
 ```
 - The server should be running at `http://localhost:5000`.
 - You should see output similar to this:
+![Screenshot 2025-02-10 051944](https://github.com/user-attachments/assets/1da30f88-51fe-42b8-b068-a89eb5448eb0)
 
 ## API Endpoints
 
@@ -73,6 +74,7 @@ curl -X POST http://localhost:5000/api/books \
 ```
 
 Response:
+![Screenshot 2025-02-10 051224](https://github.com/user-attachments/assets/5cf4d2e5-6e05-40ad-b7c7-a4627c73b2dd)
 
 
 ### 2. Retrieve All Books (GET)
@@ -83,37 +85,42 @@ curl -X GET http://localhost:5000/api/books
 ```
 
 Response:
+![Screenshot 2025-02-10 051233](https://github.com/user-attachments/assets/71853215-6729-4966-97cc-0bedb36bfe19)
 
+![Screenshot 2025-02-10 051630](https://github.com/user-attachments/assets/f57497e8-d8cd-49b7-8db1-1ace101bbe8f)
 
 ### 3. Retrieve a Book by ID (GET)
 
 Endpoint: `GET /api/books/:id`
 ```
-curl -X GET http://localhost:5000/api/books/65b3f1e5f0a1a5c4b6d8e1a7
+curl -X GET http://localhost:5000/api/books/67a91aa24aae761b36478d94
 ```
 
 Response:
+![Screenshot 2025-02-10 061129](https://github.com/user-attachments/assets/f67527ea-e71c-46fe-8408-113a3572131b)
 
 
 ### 4. Update a Book (PUT)
 
 Endpoint: `PUT /api/books/:id`
 ```
-curl -X PUT http://localhost:5000/api/books/65b3f1e5f0a1a5c4b6d8e1a7 \
+curl -X PUT http://localhost:5000/api/books/67a919454aae761b36478d8d \
      -H "Content-Type: application/json" \
      -d '{"title": "The Great Gatsby", "author": "F. Scott Fitzgerald", "pages": 200, "publishedYear": 1925}'
 ```
 
 Response:
+![Screenshot 2025-02-10 051817](https://github.com/user-attachments/assets/eeba9f66-1361-4f6b-8f07-a6f4dbf7c96e)
 
 ### 5. Delete a Book (DELETE)
 
 Endpoint: `DELETE /api/books/:id`
 ```
-curl -X DELETE http://localhost:5000/api/books/65b3f1e5f0a1a5c4b6d8e1a7
+curl -X DELETE http://localhost:5000/api/books/67a919454aae761b36478d8d
 ```
 
 Response:
+![Screenshot 2025-02-10 051901](https://github.com/user-attachments/assets/3138a735-af2e-4af6-925c-63e0eaca5bdd)
 
 ### 5. Database View (MongoDB)
 To see the stored books, run:
@@ -123,6 +130,7 @@ use booksdb
 db.books.find().pretty()
 ```
 Example Output:
+![Screenshot 2025-02-10 052039](https://github.com/user-attachments/assets/d60b7684-f9f6-4be6-9b34-0b1cc27664c0)
 
 
 ## Troubleshooting
