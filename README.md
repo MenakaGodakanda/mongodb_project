@@ -21,14 +21,51 @@ This project demonstrates a MongoDB-based REST API using Node.js and Express.js.
 - Delete a book
 
 ## Tech Stack
-- Ubuntu: Operating System
-- MongoDB:  NoSQL Database
-- Node.js: Backend Server
-- Express.js: Web Framework
-- Mongoose: MongoDB ODM
-- Postman: API Testing
+- **Ubuntu**: Operating System
+- **MongoDB**:  NoSQL Database
+- **Node.js**: Backend Server
+- **Express.js**: Web Framework
+- **Mongoose**: MongoDB ODM
+- **Postman**: API Testing
 
-## Installation & Setup
+## Installation
+
+### 1. Install MongoDB
+- Import MongoDB GPG Key
+```
+curl -fsSL https://pgp.mongodb.com/server-6.0.asc | sudo gpg --dearmor -o /usr/share/keyrings/mongodb-server-keyring.gpg
+```
+
+- Add the MongoDB repository
+```
+echo "deb [signed-by=/usr/share/keyrings/mongodb-server-keyring.gpg] http://repo.mongodb.org/apt/ubuntu $(lsb_release -cs)/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+```
+
+- Update package lists and install MongoDB
+```
+sudo apt update
+sudo apt install -y mongodb-org
+```
+
+- Start and Enable MongoDB
+```
+sudo systemctl start mongod
+sudo systemctl enable mongod
+```
+
+### 2. Install Node.js and Required Packages
+- Install Node.js and npm
+```
+sudo apt install -y nodejs npm
+```
+
+- Verify Installation
+```
+node -v
+npm -v
+```
+
+## Setup Environment
 
 ### 1. Clone the Repository
 ```
@@ -36,12 +73,22 @@ git clone https://github.com/MenakaGodakanda/mongodb_project.git
 cd mongodb_project
 ```
 
-### 2. Install Dependencies
+### 2. Initialize a Node.js project
 ```
-npm install
+npm init -y
 ```
 
-### 3. Set Up Environment Variables
+### 3. Install Dependencies
+```
+npm install express mongoose dotenv cors
+```
+- **express** → For creating the server and handling API routes.
+- **mongoose** → For interacting with the MongoDB database.
+- **dotenv** → For loading environment variables (e.g., MongoDB connection string).
+- **cors** → For handling Cross-Origin Resource Sharing (useful if frontend and backend are separate).
+
+
+### 4. Set Up Environment Variables
 
 Create a `.env` file in the root directory:
 ```
@@ -49,12 +96,12 @@ PORT=5000
 MONGO_URI=mongodb://127.0.0.1:27017/booksdb
 ```
 
-### 4. Start MongoDB Service
+### 3. Start MongoDB Service
 ```
 sudo systemctl start mongod
 ```
 
-### 5. Run the Server
+### 4. Run the Server
 ```
 npm start
 ```
